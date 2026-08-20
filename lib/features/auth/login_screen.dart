@@ -642,18 +642,21 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget _footer() {
+    // Sits directly on the dark navy hero background (outside the white
+    // card), so it needs light text — AppColors.primary/inkSoft are meant
+    // for text on light surfaces and are unreadable here.
     return Text.rich(
       TextSpan(
         text: 'By continuing you agree to our ',
         children: const [
-          TextSpan(text: 'Terms', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.primary)),
+          TextSpan(text: 'Terms', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.cta)),
           TextSpan(text: ' & '),
-          TextSpan(text: 'Privacy Policy', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.primary)),
+          TextSpan(text: 'Privacy Policy', style: TextStyle(fontWeight: FontWeight.w700, color: AppColors.cta)),
           TextSpan(text: '.'),
         ],
       ),
       textAlign: TextAlign.center,
-      style: const TextStyle(color: AppColors.inkSoft, fontSize: 12, height: 1.4),
+      style: TextStyle(color: Colors.white.withValues(alpha: 0.75), fontSize: 12, height: 1.4),
     );
   }
 }

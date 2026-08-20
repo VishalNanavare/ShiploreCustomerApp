@@ -59,6 +59,14 @@ captures/
 # CocoaPods — regenerated via `pod install` from Podfile.lock
 ios/Pods/
 
+# Release signing — never commit; keystore + credentials stay local/CI-secret only.
+*.jks
+*.keystore
+*.der
+google-services.json
+key.properties
+android/key.properties
+
 # Firebase config — never commit; inject via CI secrets.
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist

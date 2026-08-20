@@ -2,6 +2,11 @@
 -keep class io.flutter.** { *; }
 -keep class io.flutter.embedding.** { *; }
 
+# Flutter's deferred-components support references Play Core split-install
+# classes even though this app doesn't use dynamic feature delivery — the
+# dependency is never added, so R8 must be told not to fail on the reference.
+-dontwarn com.google.android.play.core.**
+
 # Firebase — prevent stripping of Firebase SDK internals.
 -keep class com.google.firebase.** { *; }
 -keep class com.google.android.gms.** { *; }

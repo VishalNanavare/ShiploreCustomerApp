@@ -71,12 +71,11 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
     super.dispose();
   }
 
-  DeliveryLocation? get _loc => context.read<LocationProvider>().location;
-  // When an address is explicitly selected we use ITS pin only — a saved address
-  // with no coordinates must block (HR2: location_required), never silently fall
-  // back to the browse location. Only with no selection do we use the browse pin.
-  double? get _lat => _selected != null ? _selected!.latitude : _loc?.lat;
-  double? get _lng => _selected != null ? _selected!.longitude : _loc?.lng;
+  // Delivery always requires a real saved address — raw GPS/browse coordinates
+  // are never precise enough (no house/flat number, landmark, etc.) to hand a
+  // rider, so we never fall back to the browse location here.
+  double? get _lat => _selected?.latitude;
+  double? get _lng => _selected?.longitude;
   bool get _hasTarget => _lat != null && _lng != null;
   bool get _selectedHasNoPin =>
       _selected != null && (_selected!.latitude == null || _selected!.longitude == null);
@@ -295,27 +294,16 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
       return;
     }
     final user = context.read<AuthProvider>().user;
-    final addr = _selected != null
-        ? {
-            'recipient_name': _selected!.recipientName ?? user?.name ?? '',
-            'phone': _selected!.phone ?? user?.phone ?? '',
-            'email': user?.email ?? '',
-            'line1': _selected!.line1,
-            'city': _selected!.city ?? '',
-            'state_code': _selected!.stateCode ?? '27',
-            'pincode': _selected!.pincode ?? '',
-            'formatted_address': _selected!.formattedAddress ?? '',
-          }
-        : {
-            'recipient_name': user?.name ?? '',
-            'phone': user?.phone ?? '',
-            'email': user?.email ?? '',
-            'line1': _loc!.line1 ?? '',
-            'city': _loc!.city ?? '',
-            'state_code': _loc!.stateCode ?? '27',
-            'pincode': _loc!.pincode ?? '',
-            'formatted_address': _loc!.formatted ?? '',
-          };
+    final addr = {
+      'recipient_name': _selected!.recipientName ?? user?.name ?? '',
+      'phone': _selected!.phone ?? user?.phone ?? '',
+      'email': user?.email ?? '',
+      'line1': _selected!.line1,
+      'city': _selected!.city ?? '',
+      'state_code': _selected!.stateCode ?? '27',
+      'pincode': _selected!.pincode ?? '',
+      'formatted_address': _selected!.formattedAddress ?? '',
+    };
 
     final cart = context.read<CartProvider>();
     final orderRepo = context.read<OrderRepository>();
@@ -675,10 +663,12 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
           children: [
             const Icon(Icons.wrong_location_outlined, color: AppColors.danger, size: 20),
             const SizedBox(width: 12),
-            const Expanded(
+            Expanded(
               child: Text(
-                'Pin your delivery address on the map to continue.',
-                style: TextStyle(fontSize: 13.5, color: AppColors.ink, height: 1.35),
+                _selected == null
+                    ? 'Add a delivery address to continue.'
+                    : 'Pin your delivery address on the map to continue.',
+                style: const TextStyle(fontSize: 13.5, color: AppColors.ink, height: 1.35),
               ),
             ),
             TextButton(onPressed: _pickAddress, child: const Text('Choose')),
@@ -1032,10 +1022,9 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
   );
 
   Widget _addressCard() {
-    final hasAddr = _selected != null || (_loc != null);
-    final line =
-        _selected?.oneLine ?? _loc?.shortLabel ?? 'No delivery location set';
-    final label = _selected?.label ?? _loc?.label ?? 'Deliver to';
+    final hasAddr = _selected != null;
+    final line = _selected?.oneLine ?? 'No delivery address set';
+    final label = _selected?.label ?? 'Deliver to';
     return _section(
       'Delivery address',
       icon: Icons.location_on_outlined,
@@ -1073,7 +1062,7 @@ class _CheckoutScreenState extends State<CheckoutScreen> {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  hasAddr ? line : 'Tap change to set your location',
+                  hasAddr ? line : 'Tap change to add a delivery address',
                   style: const TextStyle(
                     color: AppColors.inkSoft,
                     fontSize: 13,
@@ -1580,30 +1569,18 @@ class _AddressSheet extends StatelessWidget {
               },
             ),
             const Divider(),
-            Row(
-              children: [
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      context.push('/addresses');
-                    },
-                    icon: const Icon(Icons.add),
-                    label: const Text('Manage'),
-                  ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: OutlinedButton.icon(
-                    onPressed: () {
-                      Navigator.pop(context);
-                      context.push('/location');
-                    },
-                    icon: const Icon(Icons.my_location),
-                    label: const Text('Use location'),
-                  ),
-                ),
-              ],
+            // Only a real saved address (with recipient/house/landmark details) can
+            // be used for delivery — no "use current location" shortcut here.
+            SizedBox(
+              width: double.infinity,
+              child: OutlinedButton.icon(
+                onPressed: () {
+                  Navigator.pop(context);
+                  context.push('/addresses');
+                },
+                icon: const Icon(Icons.add),
+                label: const Text('Add / manage addresses'),
+              ),
             ),
           ],
         ),
