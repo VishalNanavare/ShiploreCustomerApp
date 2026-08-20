@@ -1,34 +1,67 @@
-# Gradle files
-.gradle/
-build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
-# Log/OS Files
+# Miscellaneous
+*.class
 *.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
 
-# Android Studio generated files and folders
-captures/
-.externalNativeBuild/
-.cxx/
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Android/Gradle local caches and generated artifacts
+android/.gradle/
+android/.kotlin/
+android/local.properties
+*.hprof
 *.aab
 *.apk
 output-metadata.json
+captures/
+.externalNativeBuild/
+.cxx/
 
-# IntelliJ
-*.iml
-.idea/
-misc.xml
-deploymentTargetDropDown.xml
-render.experimental.xml
+# CocoaPods — regenerated via `pod install` from Podfile.lock
+ios/Pods/
 
-# Keystore files
-*.jks
-*.keystore
+# Firebase config — never commit; inject via CI secrets.
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
 
-# Google Services (e.g. APIs or Firebase)
-google-services.json
-
-# Android Profiling
-*.hprof
+# Dart obfuscation symbol maps — large binary, kept in CI artifact storage.
+build/symbols/

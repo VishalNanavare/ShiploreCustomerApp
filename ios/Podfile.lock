@@ -1,0 +1,340 @@
+PODS:
+  - connectivity_plus (0.0.1):
+    - Flutter
+  - Firebase/Auth (11.15.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (~> 11.15.0)
+  - Firebase/CoreOnly (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+  - Firebase/Crashlytics (11.15.0):
+    - Firebase/CoreOnly
+    - FirebaseCrashlytics (~> 11.15.0)
+  - Firebase/Messaging (11.15.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 11.15.0)
+  - firebase_auth (5.7.0):
+    - Firebase/Auth (= 11.15.0)
+    - firebase_core
+    - Flutter
+  - firebase_core (3.15.2):
+    - Firebase/CoreOnly (= 11.15.0)
+    - Flutter
+  - firebase_crashlytics (4.3.10):
+    - Firebase/Crashlytics (= 11.15.0)
+    - firebase_core
+    - Flutter
+  - firebase_messaging (15.2.10):
+    - Firebase/Messaging (= 11.15.0)
+    - firebase_core
+    - Flutter
+  - FirebaseAppCheckInterop (11.15.0)
+  - FirebaseAuth (11.15.0):
+    - FirebaseAppCheckInterop (~> 11.0)
+    - FirebaseAuthInterop (~> 11.0)
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseCoreExtension (~> 11.15.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GTMSessionFetcher/Core (< 5.0, >= 3.4)
+    - RecaptchaInterop (~> 101.0)
+  - FirebaseAuthInterop (11.15.0)
+  - FirebaseCore (11.15.0):
+    - FirebaseCoreInternal (~> 11.15.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Logger (~> 8.1)
+  - FirebaseCoreExtension (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+  - FirebaseCoreInternal (11.15.0):
+    - "GoogleUtilities/NSData+zlib (~> 8.1)"
+  - FirebaseCrashlytics (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseInstallations (~> 11.0)
+    - FirebaseRemoteConfigInterop (~> 11.0)
+    - FirebaseSessions (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - FirebaseInstallations (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - PromisesObjC (~> 2.4)
+  - FirebaseMessaging (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 8.1)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/Reachability (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - nanopb (~> 3.30910.0)
+  - FirebaseRemoteConfigInterop (11.15.0)
+  - FirebaseSessions (11.15.0):
+    - FirebaseCore (~> 11.15.0)
+    - FirebaseCoreExtension (~> 11.15.0)
+    - FirebaseInstallations (~> 11.0)
+    - GoogleDataTransport (~> 10.0)
+    - GoogleUtilities/Environment (~> 8.1)
+    - GoogleUtilities/UserDefaults (~> 8.1)
+    - nanopb (~> 3.30910.0)
+    - PromisesSwift (~> 2.1)
+  - Flutter (1.0.0)
+  - flutter_local_notifications (0.0.1):
+    - Flutter
+  - flutter_secure_storage_darwin (10.0.0):
+    - Flutter
+    - FlutterMacOS
+  - geocoding_ios (1.0.5):
+    - Flutter
+  - geolocator_apple (1.2.0):
+    - Flutter
+    - FlutterMacOS
+  - Google-Maps-iOS-Utils (5.0.0):
+    - GoogleMaps (~> 8.0)
+  - google_maps_flutter_ios (0.0.1):
+    - Flutter
+    - Google-Maps-iOS-Utils (< 7.0, >= 5.0)
+    - GoogleMaps (< 11.0, >= 8.4)
+  - GoogleDataTransport (10.1.0):
+    - nanopb (~> 3.30910.0)
+    - PromisesObjC (~> 2.4)
+  - GoogleMaps (8.4.0):
+    - GoogleMaps/Maps (= 8.4.0)
+  - GoogleMaps/Base (8.4.0)
+  - GoogleMaps/Maps (8.4.0):
+    - GoogleMaps/Base
+  - GoogleUtilities/AppDelegateSwizzler (8.1.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Environment (8.1.1):
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Logger (8.1.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Network (8.1.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Privacy
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (8.1.1)":
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/Privacy (8.1.1)
+  - GoogleUtilities/Reachability (8.1.1):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GoogleUtilities/UserDefaults (8.1.1):
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Privacy
+  - GTMSessionFetcher/Core (4.5.0)
+  - nanopb (3.30910.0):
+    - nanopb/decode (= 3.30910.0)
+    - nanopb/encode (= 3.30910.0)
+  - nanopb/decode (3.30910.0)
+  - nanopb/encode (3.30910.0)
+  - payu_checkoutpro_flutter (1.2.0):
+    - Flutter
+    - PayUIndia-CheckoutPro (~> 9.4)
+  - PayUIndia-Analytics (4.1.0):
+    - PayUIndia-NetworkReachability (~> 2.1)
+  - PayUIndia-AssetLibrary (4.0.1)
+  - PayUIndia-CardScanner (2.1.0)
+  - PayUIndia-CheckoutPro (9.4.0):
+    - PayUIndia-AssetLibrary (~> 4.0)
+    - PayUIndia-CardScanner (~> 2.1)
+    - PayUIndia-CheckoutProBase (~> 9.4)
+    - PayUIndia-CommonUI (~> 2.4)
+    - PayUIndia-CrashReporter (~> 4.0)
+    - PayUIndia-Custom-Browser (~> 11.3)
+    - PayUIndia-NativeOtpAssist (~> 5.0)
+    - PayUIndia-NetworkReachability (~> 2.0)
+    - PayUIndia-PayUParams (~> 7.3)
+    - PayUIndia-PG-SDK (~> 12.3)
+    - PayUIndia-UPICore (~> 11.3)
+  - PayUIndia-CheckoutProBase (9.4.0):
+    - PayUIndia-PayUParams (~> 7.3)
+    - PayUIndia-PG-SDK (~> 12.3)
+  - PayUIndia-CommonUI (2.4.0):
+    - PayUIndia-Analytics (~> 4.0)
+    - PayUIndia-CrashReporter (~> 4.0)
+  - PayUIndia-CrashReporter (4.0.3)
+  - PayUIndia-Custom-Browser (11.3.0):
+    - PayUIndia-CommonUI (~> 2.3)
+  - PayUIndia-Logger (5.0.1)
+  - PayUIndia-NativeOtpAssist (5.0.1):
+    - PayUIndia-Analytics (~> 4.0)
+    - PayUIndia-CommonUI (~> 2.3)
+    - PayUIndia-CrashReporter (~> 4.0)
+    - PayUIndia-NetworkReachability (~> 2.1)
+    - PayUIndia-PayUParams (~> 7.0)
+  - PayUIndia-Networking (5.0.1):
+    - PayUIndia-Logger (~> 5.0)
+  - PayUIndia-NetworkReachability (2.1.1)
+  - PayUIndia-PayUParams (7.3.0)
+  - PayUIndia-PG-SDK (12.3.0):
+    - PayUIndia-CrashReporter (~> 4.0)
+    - PayUIndia-NetworkReachability (~> 2.1)
+    - PayUIndia-PayUParams (~> 7.3)
+  - PayUIndia-UPICore (11.3.0):
+    - PayUIndia-CommonUI (~> 2.4)
+    - PayUIndia-Networking (~> 5.0)
+    - PayUIndia-PayUParams (~> 7.3)
+  - PromisesObjC (2.4.1)
+  - PromisesSwift (2.4.1):
+    - PromisesObjC (= 2.4.1)
+  - RecaptchaInterop (101.0.0)
+  - share_plus (0.0.1):
+    - Flutter
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
+  - sqflite_darwin (0.0.4):
+    - Flutter
+    - FlutterMacOS
+
+DEPENDENCIES:
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
+  - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
+  - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
+  - firebase_messaging (from `.symlinks/plugins/firebase_messaging/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
+  - flutter_secure_storage_darwin (from `.symlinks/plugins/flutter_secure_storage_darwin/darwin`)
+  - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
+  - geolocator_apple (from `.symlinks/plugins/geolocator_apple/darwin`)
+  - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
+  - payu_checkoutpro_flutter (from `.symlinks/plugins/payu_checkoutpro_flutter/ios`)
+  - share_plus (from `.symlinks/plugins/share_plus/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
+  - sqflite_darwin (from `.symlinks/plugins/sqflite_darwin/darwin`)
+
+SPEC REPOS:
+  trunk:
+    - Firebase
+    - FirebaseAppCheckInterop
+    - FirebaseAuth
+    - FirebaseAuthInterop
+    - FirebaseCore
+    - FirebaseCoreExtension
+    - FirebaseCoreInternal
+    - FirebaseCrashlytics
+    - FirebaseInstallations
+    - FirebaseMessaging
+    - FirebaseRemoteConfigInterop
+    - FirebaseSessions
+    - Google-Maps-iOS-Utils
+    - GoogleDataTransport
+    - GoogleMaps
+    - GoogleUtilities
+    - GTMSessionFetcher
+    - nanopb
+    - PayUIndia-Analytics
+    - PayUIndia-AssetLibrary
+    - PayUIndia-CardScanner
+    - PayUIndia-CheckoutPro
+    - PayUIndia-CheckoutProBase
+    - PayUIndia-CommonUI
+    - PayUIndia-CrashReporter
+    - PayUIndia-Custom-Browser
+    - PayUIndia-Logger
+    - PayUIndia-NativeOtpAssist
+    - PayUIndia-Networking
+    - PayUIndia-NetworkReachability
+    - PayUIndia-PayUParams
+    - PayUIndia-PG-SDK
+    - PayUIndia-UPICore
+    - PromisesObjC
+    - PromisesSwift
+    - RecaptchaInterop
+
+EXTERNAL SOURCES:
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
+  firebase_auth:
+    :path: ".symlinks/plugins/firebase_auth/ios"
+  firebase_core:
+    :path: ".symlinks/plugins/firebase_core/ios"
+  firebase_crashlytics:
+    :path: ".symlinks/plugins/firebase_crashlytics/ios"
+  firebase_messaging:
+    :path: ".symlinks/plugins/firebase_messaging/ios"
+  Flutter:
+    :path: Flutter
+  flutter_local_notifications:
+    :path: ".symlinks/plugins/flutter_local_notifications/ios"
+  flutter_secure_storage_darwin:
+    :path: ".symlinks/plugins/flutter_secure_storage_darwin/darwin"
+  geocoding_ios:
+    :path: ".symlinks/plugins/geocoding_ios/ios"
+  geolocator_apple:
+    :path: ".symlinks/plugins/geolocator_apple/darwin"
+  google_maps_flutter_ios:
+    :path: ".symlinks/plugins/google_maps_flutter_ios/ios"
+  payu_checkoutpro_flutter:
+    :path: ".symlinks/plugins/payu_checkoutpro_flutter/ios"
+  share_plus:
+    :path: ".symlinks/plugins/share_plus/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
+  sqflite_darwin:
+    :path: ".symlinks/plugins/sqflite_darwin/darwin"
+
+SPEC CHECKSUMS:
+  connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
+  Firebase: d99ac19b909cd2c548339c2241ecd0d1599ab02e
+  firebase_auth: 50af8366c87bb88c80ebeae62eb60189c7246b9b
+  firebase_core: 995454a784ff288be5689b796deb9e9fa3601818
+  firebase_crashlytics: 30dcd6dfd2fe895c0848af46722a4227346c19aa
+  firebase_messaging: f4a41dd102ac18b840eba3f39d67e77922d3f707
+  FirebaseAppCheckInterop: 06fe5a3799278ae4667e6c432edd86b1030fa3df
+  FirebaseAuth: a6575e5fbf46b046c58dc211a28a5fbdd8d4c83b
+  FirebaseAuthInterop: 7087d7a4ee4bc4de019b2d0c240974ed5d89e2fd
+  FirebaseCore: efb3893e5b94f32b86e331e3bd6dadf18b66568e
+  FirebaseCoreExtension: edbd30474b5ccf04e5f001470bdf6ea616af2435
+  FirebaseCoreInternal: 9afa45b1159304c963da48addb78275ef701c6b4
+  FirebaseCrashlytics: e09d0bc19aa54a51e45b8039c836ef73f32c039a
+  FirebaseInstallations: 317270fec08a5d418fdbc8429282238cab3ac843
+  FirebaseMessaging: 3b26e2cee503815e01c3701236b020aa9b576f09
+  FirebaseRemoteConfigInterop: 1c6135e8a094cc6368949f5faeeca7ee8948b8aa
+  FirebaseSessions: b9a92c1c51bbb81e78fc3142cda6d925d700f8e7
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  flutter_local_notifications: ad39620c743ea4c15127860f4b5641649a988100
+  flutter_secure_storage_darwin: acdb3f316ed05a3e68f856e0353b133eec373a23
+  geocoding_ios: 33776c9ebb98d037b5e025bb0e7537f6dd19646e
+  geolocator_apple: ab36aa0e8b7d7a2d7639b3b4e48308394e8cef5e
+  Google-Maps-iOS-Utils: 66d6de12be1ce6d3742a54661e7a79cb317a9321
+  google_maps_flutter_ios: 17552876e72723da1d41accc22f03b5f7afbde69
+  GoogleDataTransport: aae35b7ea0c09004c3797d53c8c41f66f219d6a7
+  GoogleMaps: 8939898920281c649150e0af74aa291c60f2e77d
+  GoogleUtilities: 4f2618a4a1e762a1ee134a1e2323bba9843e06da
+  GTMSessionFetcher: fc75fc972958dceedee61cb662ae1da7a83a91cf
+  nanopb: fad817b59e0457d11a5dfbde799381cd727c1275
+  payu_checkoutpro_flutter: 29c0581cdf414fa42418dbb3e82c57d4267c1c44
+  PayUIndia-Analytics: 0cec0e6783db70080f7ca2721ae024bc26af7fb4
+  PayUIndia-AssetLibrary: e40d7697c37aea55f184e29564e2f8b63a63b472
+  PayUIndia-CardScanner: d6d024645e7fab58326e0d00b22ed42ca0ad5dc1
+  PayUIndia-CheckoutPro: 3807ac71387743022d03175bfda297433ed43eb1
+  PayUIndia-CheckoutProBase: 9baa5a5a727b05a6afffb86837e152ad7d4f34a8
+  PayUIndia-CommonUI: 5e50ef5a9b33522194ace051ff5c6835e1039200
+  PayUIndia-CrashReporter: f3dc6fe34a4f26d31107e508c4a9b17902c36b83
+  PayUIndia-Custom-Browser: cea86601cfea2f1878e2896d37c8ab31215adb45
+  PayUIndia-Logger: 50866e18a275b0726ed59afaea67b6529ab42774
+  PayUIndia-NativeOtpAssist: 3c8c60c9e1b7424f9befc6cb2e29bd0fb115bb5d
+  PayUIndia-Networking: 0709588fd96b6b42c1398d07471cf87ef2c0db71
+  PayUIndia-NetworkReachability: 581c04b9ea3a8aaa78faef179ad819759942f381
+  PayUIndia-PayUParams: dc5f3a3617fe6b41714ef789b986f95bc1012d70
+  PayUIndia-PG-SDK: 37a47ba93f2123fba997447d8f9a9ec6cafb8172
+  PayUIndia-UPICore: 5da911b01173e79138be9c37b33ca622b46ab807
+  PromisesObjC: 752c3227f599e3467650e47ea36f433eeb10c273
+  PromisesSwift: 217dea0fd5d2ad65222a109c48698add13cc1c5b
+  RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
+  share_plus: 50da8cb520a8f0f65671c6c6a99b3617ed10a58a
+  shared_preferences_foundation: 7036424c3d8ec98dfe75ff1667cb0cd531ec82bb
+  sqflite_darwin: 20b2a3a3b70e43edae938624ce550a3cbf66a3d0
+
+PODFILE CHECKSUM: 9d4b87452a0f7d4ff15a489ea3e65a58552ca5f8
+
+COCOAPODS: 1.16.2

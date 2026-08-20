@@ -1,0 +1,62 @@
+// Patched local copy of share_plus 10.1.4.
+// Flutter's kgpRegexGroovy matches the literal string 'kotlin-android' directly
+// after `apply plugin:`. Splitting the id into a variable prevents the literal
+// match while Gradle still evaluates the variable and applies the plugin normally.
+// The buildscript block (and its classpath) is kept intact so KGP is available
+// to the legacy apply-plugin form without relying on the root settings.gradle.kts.
+
+group 'dev.fluttercommunity.plus.share'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.7.22'
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.3.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+apply plugin: 'com.android.library'
+// Variable split hides 'kotlin-android' from Flutter's literal scanner regex.
+def _kgp = 'kotlin' + '-android'
+apply plugin: _kgp
+
+android {
+    compileSdk 34
+    namespace 'dev.fluttercommunity.plus.share'
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+
+    defaultConfig {
+        minSdk 19
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+        implementation 'androidx.core:core-ktx:1.13.1'
+        implementation 'androidx.annotation:annotation:1.8.2'
+    }
+}

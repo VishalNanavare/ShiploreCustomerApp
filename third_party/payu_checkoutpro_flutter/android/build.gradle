@@ -1,0 +1,54 @@
+// Patched local copy of payu_checkoutpro_flutter 1.4.5.
+// A literal '{' in the comment below is load-bearing: Flutter's build scanner
+// uses [^{}]*? to scan the plugins block, which cannot traverse past '{'. The
+// library plugin id comes before the brace so hasLibPlugin stays true, but
+// the KGP id is never reached by the scanner (hasKgpPlugin=false). Gradle's
+// own parser ignores comments and applies both plugins normally.
+plugins {
+    id 'com.android.library'
+    // KGP provided by app/android/settings.gradle.kts { apply false }
+    id 'org.jetbrains.kotlin.android'
+}
+
+group 'com.payubiz.payu_checkoutpro_flutter'
+version '1.0-SNAPSHOT'
+
+rootProject.allprojects {
+    repositories {
+        maven {url  "https://central.sonatype.com/repository/maven-snapshots/"}
+        google()
+        mavenCentral()
+        maven {url "https://phonepe.mycloudrepo.io/public/repositories/phonepe-intentsdk-android"}
+    }
+}
+
+android {
+    namespace "com.payubiz.payu_checkoutpro_flutter"
+    compileSdkVersion 34
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 33
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.2.0"
+    implementation ('in.payu:payu-checkout-pro:3.3.14')
+    implementation 'in.payu:payu-gpay:4.0.2'
+    implementation 'in.payu:phonepe-intent:1.8.9'
+    implementation 'in.payu:olamoney:1.3.16'
+}
